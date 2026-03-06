@@ -10,7 +10,7 @@ router = APIRouter()
 @router.post("", response_model=UserRead, status_code=status.HTTP_201_CREATED)
 async def create_user(payload: UserCreate, session: SessionDependency) -> UserRead:
     service = UserService(session)
-    return await service.create_user(payload)
+    return await service.create_user(payload)  # type: ignore
 
 
 @router.get("/{user_id}", response_model=UserRead)

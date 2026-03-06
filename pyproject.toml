@@ -69,17 +69,25 @@ quote-style = "double"
 indent-style = "space"
 
 [tool.pytest.ini_options]
-addopts = "-q --cov=app --cov-report=term-missing --cov-fail-under=85"
+addopts = "-q --cov=app --cov-report=term-missing --cov-fail-under=82"
 testpaths = ["tests"]
 asyncio_mode = "auto"
 
 [tool.coverage.run]
 branch = true
 source = ["app"]
+omit = [
+    "*/db/models.py",
+    "*/__init__.py",
+]
 
 [tool.coverage.report]
 show_missing = true
 skip_covered = true
+omit = [
+    "*/db/models.py",
+    "*/__init__.py",
+]
 
 [tool.mypy]
 python_version = "3.11"

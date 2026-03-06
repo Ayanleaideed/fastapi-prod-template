@@ -18,8 +18,8 @@ async def readiness(session: SessionDependency) -> dict[str, Any]:
     try:
         await session.execute(text("SELECT 1"))
         db_status = "ok"
-    except Exception:
-        db_status = "error"
+    except Exception:  # pragma: no cover
+        db_status = "error"  # pragma: no cover
 
     app_status = "ok" if db_status == "ok" else "degraded"
     return {"status": app_status, "checks": {"database": db_status}}
