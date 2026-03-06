@@ -1,0 +1,36 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local env
+.env
+
+# Caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# Dependency lockfiles
+uv.lock
+
+# IDE
+.idea/
+.vscode/
+
+# Mac/Windows
+.DS_Store
+Thumbs.db
+
+
+
+load_test.py
+/load_test.py

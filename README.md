@@ -96,7 +96,11 @@ alembic upgrade head
 
 4. Run local API:
 ```powershell
-uvicorn app.main:app --reload
+# Using uv (recommended for reproducible environments)
+uv run uvicorn app.main:app --reload
+
+# Or plain Python if uv isn't installed
+python -m uvicorn app.main:app --reload
 ```
 
 5. API docs:
