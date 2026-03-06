@@ -36,7 +36,7 @@ def test_get_user_success(client: TestClient) -> None:
         json={"email": "gettest@example.com", "full_name": "Get Test User"},
     )
     user_id = create_response.json()["id"]
-    
+
     # Retrieve the user
     response = client.get(f"/api/v1/users/{user_id}")
     assert response.status_code == 200
@@ -69,11 +69,11 @@ def test_get_user_multiple_users(client: TestClient) -> None:
         "/api/v1/users",
         json={"email": "user2@example.com", "full_name": "User Two"},
     ).json()
-    
+
     response1 = client.get(f"/api/v1/users/{user1['id']}")
     assert response1.status_code == 200
     assert response1.json()["email"] == "user1@example.com"
-    
+
     response2 = client.get(f"/api/v1/users/{user2['id']}")
     assert response2.status_code == 200
     assert response2.json()["email"] == "user2@example.com"

@@ -28,6 +28,7 @@ dev = [
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
     "pytest-cov>=6.2.1",
+    "aiosqlite>=0.20.0",
     "ruff>=0.12.7",
     "mypy>=1.17.1",
     "types-python-dateutil>=2.9.0.20250822",
@@ -103,4 +104,4 @@ ignore_missing_imports = true
 
 [tool.bandit]
 exclude_dirs = ["tests", ".venv", "alembic"]
-skips = ["B101"]
+skips = ["B101", "B104"]

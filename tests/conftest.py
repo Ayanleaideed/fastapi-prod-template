@@ -2,13 +2,11 @@ import asyncio
 from collections.abc import AsyncGenerator
 
 import pytest
-from fastapi.testclient import TestClient
-from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
-
 from app.db.base import Base
 from app.db.session import get_session
 from app.main import app
-
+from fastapi.testclient import TestClient
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 # Test database URL - using SQLite in-memory
 TEST_SQLALCHEMY_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
@@ -51,8 +49,8 @@ def client(test_session: AsyncSession) -> TestClient:
         yield test_session
 
     app.dependency_overrides[get_session] = override_get_session
-    
+
     test_client = TestClient(app)
     yield test_client
-    
+
     app.dependency_overrides.clear()
