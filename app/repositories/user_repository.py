@@ -24,4 +24,3 @@ class UserRepository:
         query = select(User).where(User.email == email)
         result = await self._session.execute(query)
         return result.scalar_one_or_none()
-

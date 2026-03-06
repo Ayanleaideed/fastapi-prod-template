@@ -15,4 +15,3 @@ class UserRead(BaseModel):
     email: EmailStr
     full_name: str
     created_at: datetime
-

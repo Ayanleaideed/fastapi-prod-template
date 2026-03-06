@@ -23,6 +23,3 @@ async def readiness(session: SessionDependency) -> dict[str, Any]:
 
     app_status = "ok" if db_status == "ok" else "degraded"
     return {"status": app_status, "checks": {"database": db_status}}
-
-
-
