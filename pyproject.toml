@@ -77,6 +77,7 @@ asyncio_mode = "auto"
 [tool.coverage.run]
 branch = true
 source = ["app"]
+concurrency = ["thread"]
 omit = [
     "*/db/models.py",
     "*/__init__.py",
