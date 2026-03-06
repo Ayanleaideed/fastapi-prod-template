@@ -1,5 +1,3 @@
-from typing import Optional
-
 from opentelemetry import trace
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.resources import Resource
@@ -9,7 +7,7 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from app.core.config import Settings
 
 
-def configure_telemetry(settings: Settings) -> Optional[TracerProvider]:
+def configure_telemetry(settings: Settings) -> TracerProvider | None:
     if not settings.otel_enabled:
         return None
 
