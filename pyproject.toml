@@ -70,14 +70,14 @@ quote-style = "double"
 indent-style = "space"
 
 [tool.pytest.ini_options]
-addopts = "-q --cov=app --cov-report=term-missing --cov-fail-under=82"
+addopts = "-q --cov --cov-report=term-missing --cov-fail-under=82"
 testpaths = ["tests"]
 asyncio_mode = "auto"
 
 [tool.coverage.run]
 branch = true
-source = ["app"]
-concurrency = ["thread"]
+source_pkgs = ["app"]
+relative_files = true
 omit = [
     "*/db/models.py",
     "*/__init__.py",
