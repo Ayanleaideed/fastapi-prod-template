@@ -1,7 +1,4 @@
-import pytest
 from fastapi.testclient import TestClient
-
-from app.main import app
 
 
 def test_liveness(client: TestClient) -> None:

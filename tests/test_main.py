@@ -1,10 +1,7 @@
-import asyncio
-
-import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from app.main import lifespan, app
+from app.main import app, lifespan
 
 
 def test_lifespan_context_manager() -> None:
